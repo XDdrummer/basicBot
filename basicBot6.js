@@ -1583,7 +1583,7 @@
                     'would like to see your genitals',
                     'would catch a grenade for you',
                     'has a nice body.',
-                    'really wants to take you to the dance, you bastard, say yes before I wreck your shit.'
+                    'really wants to take you to the dance, you bastard, say yes before I wreck your shit.',
                     'is a tree.'
                 ],
                 getCookie: function () {
