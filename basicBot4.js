@@ -1260,7 +1260,7 @@
                         }                    
                     }
                 }
-            }
+            },
 
             activeCommand: {
                 command: 'active',
