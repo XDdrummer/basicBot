@@ -165,9 +165,9 @@
     var botCreatorIDs = [];
 
     var basicBot = {
-        version: "2.1.3",
+        version: "6.6.6",
         status: false,
-        name: "basicBot",
+        name: "AnyGenreBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
@@ -176,12 +176,12 @@
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         settings: {
-            botName: "basicBot",
+            botName: "AnyGenreBot",
             language: "english",
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
-            maximumAfk: 120,
+            maximumAfk: 360,
             afkRemoval: true,
-            maximumDc: 60,
+            maximumDc: 100,
             bouncerPlus: true,
             lockdownEnabled: false,
             lockGuard: false,
@@ -294,8 +294,8 @@
                     var name = user.username;
                     API.sendChat(subChat(basicBot.chat.winnerpicked, {name: name, position: pos}));
                     setTimeout(function (winner, pos) {
-                        basicBot.userUtilities.moveUser(winner, pos, false);
-                    }, 1 * 1000, winner, pos);
+                        basicBot.userUtilities.moveUser(winner, 1, false);
+                    }, 1 * 1000, winner, 1);
                 }
             }
         },
@@ -1553,7 +1553,10 @@
                     'gives you an Oreo cookie with a glass of milk!',
                     'gives you a rainbow cookie made with love :heart:',
                     'gives you an old cookie that was left out in the rain, it\'s moldy.',
-                    'bakes you fresh cookies, it smells amazing.'
+                    'bakes you fresh cookies, it smells amazing.',
+                    'shits out something that looks like a cookie. Eat it, I guess?',
+                    'gives you a fortune cookie. It reads "fuck you m8"',
+                    'wants to date you. Pls say yes'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
