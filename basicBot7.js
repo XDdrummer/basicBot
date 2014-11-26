@@ -1246,17 +1246,30 @@
                     if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if( !basicBot.commands.executable(this.rank, chat) ) return void (0);
                     else{
+                        
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nousercookie, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfcookie, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.cookie, {nameto: user.username, namefrom: chat.un, cookie: this.getCookie()}));
+                            }
+                        
                         var randomnumber=Math.floor(Math.random()*6)
                         if(randomnumber === 1){
-                            API.sendChat("Trees are just really cool. What can I say? 10/10 would fuck.");
+                            API.sendChat("/me Trees are just really cool. What can I say? 10/10 would fuck. @" + user.username);
                         }else if(randomnumber === 2){
-                            API.sendChat("This room supports tree rubbing!");
+                            API.sendChat("/me This room supports tree rubbing! @" + user.username);
                         }else if(randomnumber === 3){
-                            API.sendChat("This room contains a wide range of trees, from oak to palm. What tree will you discover?");
+                            API.sendChat("/me This room contains a wide range of trees, from oak to palm. What tree will you discover? @" + user.username);
                         }else if(randomnumber === 4){
-                            API.sendChat("lol u wanna know about trees? kys m80");
+                            API.sendChat("/me lol u wanna know about trees? kys m80 @" + user.username);
                         }else{
-                            API.sendChat("trees... swag..... 420 blaze it..");
+                            API.sendChat("/me trees... swag..... 420 blaze it.. @" + user.username);
                         }                    
                     }
                 }
