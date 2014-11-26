@@ -1238,6 +1238,29 @@
                         }
                 },
              **/
+            treeCommand: {
+                command: 'tree',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if( !basicBot.commands.executable(this.rank, chat) ) return void (0);
+                    else{
+                        var randomnumber=Math.floor(Math.random()*6)
+                        if(randomnumber === 1){
+                            API.sendChat("Trees are just really cool. What can I say? 10/10 would fuck.");
+                        }else if(randomnumber === 2){
+                            API.sendChat("This room supports tree rubbing!");
+                        }else if(randomnumber === 3){
+                            API.sendChat("This room contains a wide range of trees, from oak to palm. What tree will you discover?");
+                        }else if(randomnumber === 4){
+                            API.sendChat("lol u wanna know about trees? kys m80");
+                        }else{
+                            API.sendChat("trees... swag..... 420 blaze it..");
+                        }                    
+                    }
+                }
+            }
 
             activeCommand: {
                 command: 'active',
