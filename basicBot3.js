@@ -1556,7 +1556,12 @@
                     'bakes you fresh cookies, it smells amazing.',
                     'shits out something that looks like a cookie. Eat it, I guess?',
                     'gives you a fortune cookie. It reads "fuck you m8"',
-                    'wants to date you. Pls say yes'
+                    'wants to date you. Pls say yes',
+                    'would like to see your genitals',
+                    'would catch a grenade for you',
+                    'has a nice body.',
+                    'really wants to take you to the dance, you bastard, say yes before I wreck your shit.'
+                    'is a tree.'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
